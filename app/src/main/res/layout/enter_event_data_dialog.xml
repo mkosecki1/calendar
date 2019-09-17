@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dialog_calendar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/enter_dialog_top_id"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/enter_dialog_title_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_dialog_title"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/enter_dialog_top_id" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/enter_dialog_data_id"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@drawable/select_calendar_view_shape"
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:text="!!!!!!!"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_dialog_top_id" />
+
+    <TimePicker
+        android:id="@+id/time_picker_dialog_id"
+        android:layout_width="240dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@drawable/select_calendar_view_shape"
+        android:timePickerMode="spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.437"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carousel_dialog_id" />
+
+    <in.goodiebag.carouselpicker.CarouselPicker
+        android:id="@+id/carousel_dialog_id"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:background="@drawable/select_calendar_view_shape"
+        android:foregroundGravity="center"
+        android:padding="@dimen/margin_micro"
+        app:items_visible="three"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_dialog_data_id" />
+
+    <Button
+        android:id="@+id/enter_dialog_cancel_button_id"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/cancel_button"
+        android:background="@drawable/button_details_ripple_effect"
+        app:layout_constraintStart_toStartOf="@+id/time_picker_dialog_id"
+        app:layout_constraintTop_toBottomOf="@+id/time_picker_dialog_id" />
+
+    <Button
+        android:id="@+id/dialog_ok_button_id"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_medium"
+        android:text="@string/ok_button"
+        android:background="@drawable/button_details_ripple_effect"
+        app:layout_constraintEnd_toEndOf="@+id/time_picker_dialog_id"
+        app:layout_constraintTop_toBottomOf="@+id/time_picker_dialog_id" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
