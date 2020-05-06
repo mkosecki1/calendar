@@ -258,7 +258,6 @@ class CalendarActivity : AppCompatActivity(), EventsCalendar.Callback {
             imageCarousel = mDialogView.carousel_dialog_id
             createListOfCarousel(imageCarousel)
             show()
-            window.setLayout(650, 920)
         }
 
         mDialogView.enter_dialog_data_id.text = calendar
