@@ -4,16 +4,17 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.view.Menu
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import com.google.firebase.auth.FirebaseAuth
 import com.muddzdev.styleabletoast.StyleableToast
 import com.sharedcalendar.R
-import com.sharedcalendar.utility.*
+import com.sharedcalendar.utility.checkInternetConnection
+import com.sharedcalendar.utility.setupActionBar
+import com.sharedcalendar.utility.showMessage
+import com.sharedcalendar.utility.startSound
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -22,7 +23,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        startActionBar()
         setupActionBar(toolbar_main_activity_id, R.string.main_activity_title)
         auth = FirebaseAuth.getInstance()
         isUserLogged()
@@ -60,15 +60,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             it.setDisplayHomeAsUpEnabled(false)
         } ?: throw IllegalAccessException(getString(R.string.start_action_bar_error_text))
     }
-
-//    private fun setupActionBar(toolbar: Toolbar) {
-//        this.setSupportActionBar(toolbar)
-//        supportActionBar?.let {
-//            title = getString(R.string.main_activity_title)
-//            it.setDisplayHomeAsUpEnabled(false)
-//            it.setDisplayShowTitleEnabled(false)
-//        }
-//    }
 
     private fun loginUser() {
         val email = edit_text_login_email_id.text.toString().trim()
